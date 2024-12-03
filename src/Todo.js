@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import dotenv from 'dotenv';
+dotenv.config();
+
+const apiurl = process.env.BASE_URL
 
 const Todo = () => {
     const [title, setTitle] = useState("");
@@ -10,7 +14,6 @@ const Todo = () => {
     const [editTitle, setEditTitle] = useState("");
     const [editDescription, setEditDescription] = useState("");
 
-    const apiurl = "https://todo-backend-mern-q3fc.onrender.com";
 
     const handelSubmit = () => {
         if (title.trim() !== ' ' && description.trim() !== ' ') {
